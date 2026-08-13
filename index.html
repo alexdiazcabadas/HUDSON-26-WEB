@@ -26,6 +26,7 @@
 * { margin: 0; padding: 0; box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 
+html, body { width: 100%; margin: 0; padding: 0; }
 body {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
   font-weight: 400;
@@ -178,6 +179,7 @@ nav.scrolled .nav-links a { color: var(--text-secondary); }
 /* ---------- Hero ---------- */
 .hero {
   position: relative;
+  width: 100%;
   min-height: 100vh;
   overflow: hidden;
   background: #000;
@@ -185,15 +187,16 @@ nav.scrolled .nav-links a { color: var(--text-secondary); }
   flex-direction: column;
   justify-content: flex-end;
   align-items: center;
-  padding: 100px 24px 8vh;
+  padding: 100px 0 8vh;
 }
 
 .hero-image {
   position: absolute;
-  inset: 0;
-  background-image: url('hero.webp');
-  background-size: cover;
-  background-position: center center;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
   z-index: 0;
   opacity: 0;
   animation: heroImageIn 2.8s cubic-bezier(0.16, 1, 0.3, 1) 2.4s forwards;
@@ -621,7 +624,7 @@ footer .footer-mark {
 </nav>
 
 <section class="hero">
-  <div class="hero-image"></div>
+  <img class="hero-image" src="hero.webp" alt="" aria-hidden="true">
   <div class="hero-scrim"></div>
   <div class="hero-content">
     <div class="hero-mark">Hudson<span class="accent">·</span>26</div>
