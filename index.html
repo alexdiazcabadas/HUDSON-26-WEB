@@ -37,81 +37,14 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* ---------- Loading / Cosmic Ignition ---------- */
+/* ---------- Loading / Simple Black Fade ---------- */
 .loader {
   position: fixed;
   inset: 0;
   background: #000;
   z-index: 200;
-  overflow: hidden;
   pointer-events: none;
-  animation: loaderFade 1.4s ease-out 3.6s forwards;
-}
-
-.loader-flash {
-  position: absolute;
-  top: 50%; left: 50%;
-  width: 6px; height: 6px;
-  background: #fff;
-  border-radius: 50%;
-  transform: translate(-50%, -50%);
-  animation: cosmicIgnition 3.6s cubic-bezier(0.19, 1, 0.22, 1) forwards;
-  z-index: 3;
-}
-
-@keyframes cosmicIgnition {
-  0%   { box-shadow: 0 0 0 0 rgba(255,255,255,0); opacity: 0; }
-  10%  { box-shadow: 0 0 6px 2px rgba(255,240,220,0.7); opacity: 1; transform: translate(-50%, -50%) scale(1); }
-  25%  { box-shadow: 0 0 24px 6px rgba(255,235,205,0.95); transform: translate(-50%, -50%) scale(1.4); }
-  38%  { box-shadow: 0 0 60px 14px rgba(177,142,92,0.9), 0 0 140px 40px rgba(120,170,230,0.4); transform: translate(-50%, -50%) scale(2); }
-  55%  { box-shadow: 0 0 300px 80px rgba(177,142,92,0.5), 0 0 600px 200px rgba(120,170,230,0.25); transform: translate(-50%, -50%) scale(3); }
-  75%  { box-shadow: 0 0 1200px 300px rgba(177,142,92,0.2), 0 0 2000px 700px rgba(120,170,230,0.08); transform: translate(-50%, -50%) scale(4); }
-  100% { box-shadow: 0 0 3000px 1000px rgba(0,0,0,0); opacity: 0; transform: translate(-50%, -50%) scale(5); }
-}
-
-.loader-ring {
-  position: absolute;
-  top: 50%; left: 50%;
-  width: 6px; height: 6px;
-  border: 1px solid rgba(177, 142, 92, 0.9);
-  border-radius: 50%;
-  transform: translate(-50%, -50%);
-  opacity: 0;
-  z-index: 2;
-}
-.loader-ring.r1 { animation: expandRing 2.4s ease-out 1.2s forwards; }
-.loader-ring.r2 { animation: expandRing 2.4s ease-out 1.5s forwards; }
-.loader-ring.r3 { animation: expandRing 2.4s ease-out 1.8s forwards; }
-
-@keyframes expandRing {
-  0%   { width: 6px; height: 6px; opacity: 0.8; border-color: rgba(255,235,205,0.9); border-width: 1.5px; }
-  100% { width: 2600px; height: 2600px; opacity: 0; border-color: rgba(120,170,230,0); border-width: 0.5px; }
-}
-
-/* Loader stars */
-.loader-stars, .hero-stars {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-}
-.loader-stars { opacity: 0; animation: fadeIn 1.6s ease-out 0.3s forwards; z-index: 1; }
-.hero-stars   { opacity: 0; animation: fadeIn 2s ease-out 3.6s forwards; z-index: 1; }
-
-.star {
-  position: absolute;
-  width: 1px; height: 1px;
-  background: #fff;
-  border-radius: 50%;
-  animation: twinkle 4s ease-in-out infinite;
-}
-.star.bright {
-  width: 2px; height: 2px;
-  box-shadow: 0 0 4px rgba(255,255,255,0.8);
-}
-
-@keyframes twinkle {
-  0%, 100% { opacity: 0.2; }
-  50%      { opacity: 0.85; }
+  animation: loaderFade 1.6s ease-out 1.4s forwards;
 }
 
 @keyframes fadeIn {
@@ -199,12 +132,12 @@ nav.scrolled .nav-links a { color: var(--text-secondary); }
   object-position: center center;
   z-index: 0;
   opacity: 0;
-  animation: heroImageIn 2.8s cubic-bezier(0.16, 1, 0.3, 1) 2.4s forwards;
+  animation: heroImageIn 3.6s ease-out 0.6s forwards;
 }
 
 @keyframes heroImageIn {
-  from { opacity: 0; transform: scale(1.08); }
-  to   { opacity: 1; transform: scale(1); }
+  from { opacity: 0; }
+  to   { opacity: 1; }
 }
 
 .hero-scrim {
@@ -234,7 +167,7 @@ nav.scrolled .nav-links a { color: var(--text-secondary); }
   line-height: 1;
   text-transform: uppercase;
   opacity: 0;
-  animation: fadeUp 1.6s cubic-bezier(0.19, 1, 0.22, 1) 3.6s forwards;
+  animation: fadeUp 1.6s cubic-bezier(0.19, 1, 0.22, 1) 3.4s forwards;
   text-indent: 0.28em;
   text-shadow: 0 2px 24px rgba(0,0,0,0.4);
 }
@@ -251,7 +184,7 @@ nav.scrolled .nav-links a { color: var(--text-secondary); }
   background: var(--gold);
   margin: 26px auto;
   opacity: 0;
-  animation: fadeUp 1s ease-out 4.1s forwards;
+  animation: fadeUp 1s ease-out 3.9s forwards;
 }
 
 .hero-headline {
@@ -262,7 +195,7 @@ nav.scrolled .nav-links a { color: var(--text-secondary); }
   letter-spacing: 0.02em;
   line-height: 1.5;
   opacity: 0;
-  animation: fadeUp 1s ease-out 4.4s forwards;
+  animation: fadeUp 1s ease-out 4.2s forwards;
   max-width: 620px;
   margin: 0 auto;
   font-style: italic;
@@ -276,7 +209,7 @@ nav.scrolled .nav-links a { color: var(--text-secondary); }
   letter-spacing: 0.32em;
   text-transform: uppercase;
   opacity: 0;
-  animation: fadeUp 1s ease-out 4.7s forwards;
+  animation: fadeUp 1s ease-out 4.5s forwards;
   font-weight: 500;
   font-family: 'Inter', sans-serif;
   text-shadow: 0 2px 12px rgba(0,0,0,0.6);
@@ -605,13 +538,7 @@ footer .footer-mark {
 </head>
 <body>
 
-<div class="loader" aria-hidden="true">
-  <div class="loader-stars" id="loader-stars"></div>
-  <div class="loader-ring r1"></div>
-  <div class="loader-ring r2"></div>
-  <div class="loader-ring r3"></div>
-  <div class="loader-flash"></div>
-</div>
+<div class="loader" aria-hidden="true"></div>
 
 <nav id="nav">
   <div class="nav-logo">HUDSON 26</div>
